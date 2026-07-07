@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Byonabye Moses</title>
+  <meta name="description" content="Contact Byonabye Moses — email, phone, location and project message form." />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+  <nav class="navbar" aria-label="Primary navigation">
+    <div class="container navbar-inner">
+      <a class="brand" href="index.html">
+<img class="logo-img" src="images/profile/logo.jpg" alt="Byonabye Moses" loading="lazy" />
+
+        <span class="brand-title">Byonabye Moses</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="projects.html" data-nav>Projects</a></li>
+        <li><a href="about.html" data-nav>About</a></li>
+
+        <li><a href="contact.html" class="is-active" data-nav>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-grid">
+          <div>
+            <div class="kicker"><span class="dot"></span> Contact</div>
+            <h1>Let’s build something dependable.</h1>
+            <p>Send a message using the form or watsup or call me using the number or the email below.</p>
+          </div>
+          <aside class="hero-card">
+            <div class="stat-grid">
+              <div class="stat"><div class="num">Email</div><div class="lbl">Fastest response</div></div>
+              <div class="stat"><div class="num">Phone</div><div class="lbl">+256 780813859</div></div>
+              <div class="stat"><div class="num">Location</div><div class="lbl">Kampala, Uganda</div></div>
+              <div class="stat"><div class="num">Projects</div><div class="lbl">Power & embedded</div></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <div class="contact-item">
+              <div class="contact-ico">📧</div>
+              <div>
+                <h3>Email</h3>
+                <p>byonabyemoses@email.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-ico">📱</div>
+              <div>
+                <h3>Phone</h3>
+                <p>+256 780813859</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-ico">📍</div>
+              <div>
+                <h3>Location</h3>
+                <p>Kampala, Uganda</p>
+              </div>
+            </div>
+
+            <div class="panel contact-cta" style="margin-top: 14px;">
+              <h3>What I can help with</h3>
+              <p>Power distribution & monitoring,3kva Solar Hybrid System,5kva Solar Hybrid System,10kVA Solar Back up system Busitema University,50kVA Back up Hybrid Solar System,Electrical installation in residential homes and all kinds of electrical operatios.</p>
+            </div>
+
+          </div>
+
+          <div class="panel form">
+            <form id="contactForm" class="form" autocomplete="on">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="field">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" placeholder="Project inquiry" required />
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project (goals, timeline, requirements)" required></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">&copy; 2025 Byonabye Moses. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+</body>
+</html>
+
