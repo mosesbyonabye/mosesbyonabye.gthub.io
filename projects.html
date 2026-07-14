@@ -257,11 +257,61 @@
               var player = new window.Vimeo.Player(iframe);
 
               var isPlaying = false;
-              player.getPaused().then(function (paused) {
-                isPlaying = !paused;
-              }).catch(function () {});
+              var iconPlay = document.getElementById('vimeoIconPlay');
+              var iconPause = document.getElementById('vimeoIconPause');
+
+              function setIconsForPaused(paused) {
+                if (!iconPlay || !iconPause) return;
+                iconPlay.style.display = paused ? 'inline-flex' : 'none';
+                iconPause.style.display = paused ? 'none' : 'inline-flex';
+              }
+
+              // Initialize icons
+              player.getPaused()
+                .then(function (paused) {
+                  setIconsForPaused(paused);
+                })
+                .catch(function () {});
+
+              // Keep icons updated
+              player.on('play', function () {
+                setIconsForPaused(false);
+              });
+              player.on('pause', function () {
+                setIconsForPaused(true);
+              });
+
+              // Hide/show controls after a few seconds like native behavior
+              var controlsWrap = document.querySelector('[aria-label="Video controls"]');
+              function showControls() {
+                if (!controlsWrap) return;
+                controlsWrap.style.opacity = '1';
+                controlsWrap.style.pointerEvents = 'auto';
+                clearTimeout(showControls._t);
+                showControls._t = setTimeout(function () {
+                  controlsWrap.style.opacity = '0';
+                  controlsWrap.style.pointerEvents = 'none';
+                }, 2500);
+              }
+
+              // show once on load
+              if (controlsWrap) {
+                controlsWrap.style.opacity = '1';
+                controlsWrap.style.pointerEvents = 'auto';
+                showControls._t = setTimeout(function () {
+                  controlsWrap.style.opacity = '0';
+                  controlsWrap.style.pointerEvents = 'none';
+                }, 2500);
+
+                // Show controls again when user taps the area
+                controlsWrap.addEventListener('click', function (e) {
+                  e.stopPropagation();
+                  showControls();
+                });
+              }
 
               window.__vimeoTogglePlay = function () {
+                showControls();
                 player.getPaused().then(function (paused) {
                   if (paused) return player.play();
                   return player.pause();
@@ -269,14 +319,17 @@
               };
 
               window.__vimeoRestart = function () {
+                showControls();
                 player.setCurrentTime(0).then(function () {
                   return player.play();
                 }).catch(function () {});
               };
 
               window.__vimeoFullscreen = function () {
+                showControls();
                 player.requestFullscreen().catch(function () {});
               };
+
             })();
           </script>
 
