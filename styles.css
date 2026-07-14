@@ -842,6 +842,10 @@ input:focus, textarea:focus {
 
 @media (max-width: 520px) {
   .nav-links { gap: 8px; }
+  /* Prevent brand/title from wrapping/overflowing into nav area on small phones */
+  .brand-title { font-size: 14px; white-space: nowrap; }
+  .brand { min-width: 0; }
+
   /* Make Projects gallery images big on phones (same feel as desktop) */
   .image-grid img { height: 420px; }
 
