@@ -844,7 +844,40 @@ input:focus, textarea:focus {
   .nav-links { gap: 8px; }
   .nav-links a { padding: 8px 10px; font-size: 13px; }
   .skill-list { grid-template-columns: 1fr; }
+
+  /* About page: make typography + profile section stack cleanly */
+  .page-hero { padding: 20px 0 8px; }
+  .hero-grid { gap: 18px; }
+  .page-hero-grid { grid-template-columns: 1fr; }
+  .profile-section { grid-template-columns: 1fr; gap: 18px; }
+  .profile-text h2 { font-size: 1.5rem; }
+  .profile-text p { font-size: 0.98rem; }
+
+  /* Panels grid on About page (inline style already sets 2 cols; we enforce 1 col on small screens) */
+.about-content .grid-3 { grid-template-columns: 1fr !important; }
+  /* also override panels wrapper that uses repeat(2) inline */
+.about-content > .container > .grid-3 { grid-template-columns: 1fr !important; }
+  .about-content .panel { width: 100%; }
+
+
+  /* Profile image */
+  .profile-image { border-radius: 14px; }
+
+
+  img { max-width: 100%; height: auto; }
+
+  /* About "What I do" image panels: override fixed 420x400 size that causes overflow */
+  .about-content .image-panel img,
+  .about-content .panel .image-panel img,
+  .image-panel img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
 }
+
+
 
 
 
