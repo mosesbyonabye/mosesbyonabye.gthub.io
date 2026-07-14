@@ -843,7 +843,7 @@ input:focus, textarea:focus {
 @media (max-width: 520px) {
   .nav-links { gap: 8px; }
   /* Prevent brand/title from wrapping/overflowing into nav area on small phones */
-  .brand-title { font-size: 12px; line-height: 1; }
+  .brand-title { font-size: 10px; line-height: 1; }
   .brand { min-width: 0; max-width: calc(100vw - 140px); }
   .brand { overflow: hidden; }
 
