@@ -834,7 +834,7 @@ input:focus, textarea:focus {
   .page-hero-grid { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
 
-  .hero-collage img { height: 120px; }
+  .hero-collage img { height: 320px; }
   .image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .image-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -842,6 +842,9 @@ input:focus, textarea:focus {
 
 @media (max-width: 520px) {
   .nav-links { gap: 8px; }
+  /* Make Projects gallery images big on phones (same feel as desktop) */
+  .image-grid img { height: 420px; }
+
   .nav-links a { padding: 8px 10px; font-size: 13px; }
   .skill-list { grid-template-columns: 1fr; }
 
@@ -866,16 +869,22 @@ input:focus, textarea:focus {
 
   img { max-width: 100%; height: auto; }
 
-  /* About "What I do" image panels: override fixed 420x400 size that causes overflow */
+  /* About "What I do" image panels: make them feel like profile-image on phones */
   .about-content .image-panel img,
   .about-content .panel .image-panel img,
-  .image-panel img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
+  .image-panel img,
+  /* Also cover our Skills/Projects tiles */
+  .image-grid img {
+    width: 400px ;
+    max-width: 500px;
+    height: 340px ;
     object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 }
+
 
 
 
