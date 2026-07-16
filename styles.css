@@ -844,14 +844,11 @@ input:focus, textarea:focus {
   .nav-links { gap: 8px; }
   /* Prevent brand/title from wrapping/overflowing into nav area on small phones */
   .brand-title { font-size: 10px; line-height: 1.2; text-overflow: ellipsis; }
-  
   .brand { min-width: 0; max-width: calc(100vw - 140px); }
   .brand { overflow: hidden; }
 
-
-  /* Make Projects gallery images big on phones (same feel as desktop) */
-  .image-grid img { height: 420px; }
-
+  .image-grid { grid-template-columns: 1fr; }
+  .image-grid-3 { grid-template-columns: 1fr; }
   .nav-links a { padding: 8px 10px; font-size: 13px; }
   .skill-list { grid-template-columns: 1fr; }
 
@@ -864,37 +861,19 @@ input:focus, textarea:focus {
   .profile-text p { font-size: 0.98rem; }
 
   /* Panels grid on About page (inline style already sets 2 cols; we enforce 1 col on small screens) */
-.about-content .grid-3 { grid-template-columns: 1fr !important; }
+  .about-content .grid-3 { grid-template-columns: 1fr !important; }
   /* also override panels wrapper that uses repeat(2) inline */
-.about-content > .container > .grid-3 { grid-template-columns: 1fr !important; }
+  .about-content > .container > .grid-3 { grid-template-columns: 1fr !important; }
   .about-content .panel { width: 100%; }
 
   /* Profile image */
   .profile-image { border-radius: 14px; }
 
   img { max-width: 100%; height: auto; }
-
-  /* About "What I do" image panels: make them feel like profile-image on phones */
-  .about-content .image-panel img,
-  .about-content .panel .image-panel img,
-  .image-panel img {
+  .image-grid img {
     width: 100%;
     max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Project/skill galleries should stack in one column on small phones */
-  .image-grid,
-  .image-grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .image-grid img {
-    height: auto;
+    height: 240px;
   }
 }
 
