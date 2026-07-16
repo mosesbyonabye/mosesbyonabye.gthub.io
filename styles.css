@@ -869,26 +869,32 @@ input:focus, textarea:focus {
 .about-content > .container > .grid-3 { grid-template-columns: 1fr !important; }
   .about-content .panel { width: 100%; }
 
-
   /* Profile image */
   .profile-image { border-radius: 14px; }
-
 
   img { max-width: 100%; height: auto; }
 
   /* About "What I do" image panels: make them feel like profile-image on phones */
   .about-content .image-panel img,
   .about-content .panel .image-panel img,
-  .image-panel img,
-  /* Also cover our Skills/Projects tiles */
-  .image-grid img {
-    width: 400px ;
-    max-width: 500px;
-    height: 340px ;
+  .image-panel img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 14px;
     border: 1px solid rgba(255,255,255,0.12);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Project/skill galleries should stack in one column on small phones */
+  .image-grid,
+  .image-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .image-grid img {
+    height: auto;
   }
 }
 
