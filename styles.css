@@ -753,7 +753,7 @@ input:focus, textarea:focus {
 /* Image galleries / collages */
 .hero-collage {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 10px;
   margin-top: 16px;
 }
@@ -770,7 +770,7 @@ input:focus, textarea:focus {
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 1fr;
   align-items: stretch;
   gap: 14px;
@@ -814,6 +814,10 @@ input:focus, textarea:focus {
   gap: 10px;
 }
 
+.image-panel > :only-child {
+  grid-column: 1 / -1;
+}
+
 .image-panel img {
   width: 100%;
   max-width: 100%;
@@ -852,10 +856,10 @@ input:focus, textarea:focus {
   .grid-3 { grid-template-columns: 1fr; }
   .about-content .grid-3 { grid-template-columns: 1fr !important; }
 
-  .hero-collage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-collage { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
   .hero-collage img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
-  .image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .image-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .image-grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+  .image-grid-3 { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
   .image-panel { grid-template-columns: 1fr; }
   .image-panel img { width: 100%; max-width: 100%; height: auto; aspect-ratio: 4 / 3; }
 }
